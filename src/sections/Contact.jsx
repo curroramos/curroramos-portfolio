@@ -18,51 +18,16 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: 'JavaScript Mastery',
-          from_email: form.email,
-          to_email: 'sujata@jsmastery.pro',
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
-      )
-      .then(
-        () => {
-          setLoading(false);
-          showAlert({
-            show: true,
-            text: 'Thank you for your message 😃',
-            type: 'success',
-          });
-
-          setTimeout(() => {
-            hideAlert(false);
-            setForm({
-              name: '',
-              email: '',
-              message: '',
-            });
-          }, [3000]);
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          showAlert({
-            show: true,
-            text: "I didn't receive your message 😢",
-            type: 'danger',
-          });
-        },
-      );
-  };
+  
+    const subject = encodeURIComponent('Message from Contact Form');
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+    );
+  
+    const mailtoLink = `mailto:francisco_ramos@berkeley.edu?subject=${subject}&body=${body}`;
+  
+    window.location.href = mailtoLink;
+  };  
 
   return (
     <section className="c-space my-20" id="contact">
@@ -74,8 +39,7 @@ const Contact = () => {
         <div className="contact-container">
           <h3 className="head-text">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3">
-            Whether you’re looking to build a new website, improve your existing platform, or bring a unique project to
-            life, I’m here to help.
+            Whether you’re looking to find help with your project, or want to chat, I’m here to help!
           </p>
 
           <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
@@ -88,7 +52,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="ex., John Doe"
+                placeholder="ex., Your Name"
               />
             </label>
 
@@ -101,7 +65,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="ex., johndoe@gmail.com"
+                placeholder="ex., your_email@gmail.com"
               />
             </label>
 

@@ -63,7 +63,7 @@ const About = () => {
   }, []);
 
   return (
-    <section className="c-space my-20" id="about">
+    <section className="c-space my-10" id="about">
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
 
         {/* Intro */}
@@ -85,7 +85,7 @@ const About = () => {
             <div className="p-6">
               <p className="grid-headtext">Hi, I'm Francisco Ramos</p>
               <p className="grid-subtext">
-                I'm a software engineer and UC Berkeley grad with hands-on experience building agentic AI systems. I recently led development of chatbots and AI dashboards for legal and compliance use cases.
+                I'm a software engineer and UC Berkeley grad with hands-on experience building agentic AI systems. I recently led development of chatbots and AI dashboards for market intelligence and compliance use cases.
               </p>
             </div>
           </div>

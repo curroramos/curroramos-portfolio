@@ -117,7 +117,16 @@ export const workExperiences = [
 
 export const industryProjects = [
   {
-    title: "Recommendation system to reduce customer frustration, incorporating a prediction system for waiting times and optimizing prices and distances",
+    title: "Agentic AI Legal Dashboard and Multi-Agent Chatbot for Trader Support and Market Intelligence",
+    company: "Smith & Associates, L.P.",
+    date: "June 2024 – April 2025",
+    location: "Houston, TX, USA",
+    image: "assets/chatbot.png", 
+    icon: "/assets/smith.jpeg", 
+    links: []
+  },
+  {
+    title: "Personalized EV Charging Recommendation System with LSTM-Based Wait-Time Prediction",
     company: "General Motors",
     date: "January 2024 - May 2024",
     location: "Berkeley, California",
@@ -144,7 +153,10 @@ export const industryProjects = [
     links: [
       { label: "Paper", url: "files/ME292B.pdf", type: "orange" }
     ]
-  },
+  }
+];
+
+export const researchProjects = [
   {
     title: "Enhancing LLM training optimization algorithms through the application of generalization metrics and correlational analysis",
     company: "Sky Computing Lab. University of California, Berkeley",
@@ -153,10 +165,7 @@ export const industryProjects = [
     image: "assets/llm.png",
     icon: "/assets/berkeley.png",
     links: []
-  }
-];
-
-export const researchProjects = [
+  },
   {
     title: "Autonomous Unmanned Aerial Vehicle System: Drone for Autonomous Drone Racing Competition.",
     authors: "Francisco Ramos Pérez et al.",

@@ -26,12 +26,12 @@ const Media = () => {
         )}
       </div>
       
-      <div className="relative flex-grow">
+      <div className="relative flex-grow translate">
         <BookCanvas />
         
         {/* Subtle interactive hint that appears on hover */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2
-                      bg-black bg-opacity-50 text-white px-4 py-2 rounded-full
+                      bg-black bg-opacity-50 text-white px-4 py-0 rounded-full
                       hover:bg-opacity-70 transition-all cursor-pointer">
           <div className="flex items-center">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

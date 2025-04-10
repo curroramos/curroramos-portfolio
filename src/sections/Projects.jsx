@@ -101,7 +101,7 @@ const Projects = () => {
   const filteredProjects = getProjectsByType(activeProjectType);
   
   return (
-    <section className="w-full min-h-screen py-16 px-6 md:px-16" id="work">
+    <section className="w-full min-h-screen py-0 px-6 md:px-16" id="work">
       <div className="max-w-7xl mx-auto">
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">My Projects</h2>
