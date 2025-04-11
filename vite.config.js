@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/curroramos-portfolio/',
+  // Remove this line or set to '/' for Vercel
+  base: '/',  // was '/curroramos-portfolio/'
   plugins: [react()],
 })
