@@ -9,7 +9,7 @@ export function HackerRoom(props) {
   // Load all textures
   const textures = useTexture({
     texture1: '/textures/book-cover.jpg', // Current texture
-    texture2: '/textures/screen.png',    // Add your image paths here
+    texture2: '/textures/grey.jpg',    // Add your image paths here
     texture3: '/textures/yosemite_screen.jpg',
     texture4: '/textures/berkeleyscreen.jpg',
     texture5: '/textures/sf.jpg',
@@ -27,7 +27,7 @@ export function HackerRoom(props) {
     const textureMappings = [
       { index: 19, texture: textures.texture1 },
       { index: 13, texture: textures.texture4 },
-      { index: 26, texture: textures.texture3 },
+      { index: 26, texture: textures.texture2 },
       { index: 11, texture: textures.texture3 },
       { index: 12, texture: textures.texture5 }
     ];
