@@ -8,6 +8,7 @@ import Clients from './sections/Clients.jsx';
 import Projects from './sections/Projects.jsx';
 import WorkExperience from './sections/WorkExperience.jsx';
 import Hero from './sections/Hero.jsx';
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
       <Media />
       <Contact />
       <Footer />
+      <Analytics />
     </main>
   );
 };
