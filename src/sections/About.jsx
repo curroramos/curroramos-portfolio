@@ -64,8 +64,15 @@ const About = () => {
 
   return (
     <section className="c-space my-10" id="about">
-      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Title */}
+        <div className="mb-16 text-center">
+          {/* <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h2> */}
+          <p className="text-gray-400 max-w-2xl mx-auto">
+          </p>
+      </div>
 
+      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         {/* Intro */}
         <motion.div 
           className="col-span-1 xl:row-span-3"
@@ -242,6 +249,7 @@ const About = () => {
           </div>
         </motion.div>
 
+      </div>
       </div>
     </section>
   );

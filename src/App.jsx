@@ -4,7 +4,7 @@ import About from './sections/About.jsx';
 import Footer from './sections/Footer.jsx';
 import Navbar from './sections/Navbar.jsx';
 import Contact from './sections/Contact.jsx';
-// import Clients from './sections/Clients.jsx';
+import Agents from './sections/Agents.jsx'
 import Projects from './sections/Projects.jsx';
 import WorkExperience from './sections/WorkExperience.jsx';
 import Hero from './sections/Hero.jsx';
@@ -16,6 +16,7 @@ const App = () => {
       <Navbar />
       <Hero/>
       <About />
+      <Agents />
       <Projects />
       <WorkExperience />
       {/* <Clients /> */}
