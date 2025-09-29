@@ -63,19 +63,19 @@ const About = () => {
   }, []);
 
   return (
-    <section className="c-space my-10" id="about">
+    <section className="c-space my-20" id="about">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <div className="mb-16 text-center">
-          {/* <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h2> */}
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
           </p>
       </div>
 
-      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
         {/* Intro */}
         <motion.div 
-          className="col-span-1 xl:row-span-3"
+          className="col-span-1"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -100,7 +100,7 @@ const About = () => {
 
         {/* Global Perspective (Swapped with Tech Stack) */}
         <motion.div 
-          className="col-span-1 xl:row-span-3"
+          className="col-span-1"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -136,7 +136,7 @@ const About = () => {
 
         {/* Tech Stack */}
         <motion.div 
-          className="col-span-1 xl:row-span-3"
+          className="col-span-1"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -187,7 +187,7 @@ const About = () => {
 
         {/* Passion */}
         <motion.div 
-          className="xl:col-span-2 xl:row-span-2"
+          className="xl:col-span-2"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -213,7 +213,7 @@ const About = () => {
 
         {/* University Logos + Contact */}
         <motion.div 
-          className="xl:col-span-1 xl:row-span-2"
+          className="xl:col-span-1"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}

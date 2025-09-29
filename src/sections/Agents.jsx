@@ -7,25 +7,23 @@ export default function WorkSection() {
   const handleClose = () => setModal(null);
 
   return (
-    <section className="w-full min-h-screen py-12 px-6 md:px-16 mb-32" id="work">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section className="w-full py-12 px-6 md:px-16 my-20" id="work">
+      <div className="max-w-7xl mx-auto space-y-16">
         {/* Header */}
         <div className="text-center space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Latest Work
           </h2>
-          {/* Optional subtitle */}
-          {/* <p className="text-gray-400 max-w-2xl mx-auto">
-            Here are some of my professional projects showcasing my experience in AI,
-            machine learning, computer vision, and autonomous systems.
-          </p> */}
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Recent projects showcasing AI systems and full-stack development
+          </p>
         </div>
 
         {/* Project Title and Description */}
-        <div className="space-y-6">
-          <h3 className="text-3xl md:text-4xl font-bold text-white">ReserBot</h3>
+        <div className="space-y-8">
+          <h3 className="text-3xl md:text-4xl font-bold text-white text-center">ReserBot</h3>
 
-          <div className="text-gray-400 space-y-4 max-w-5xl">
+          <div className="text-gray-400 space-y-4 max-w-5xl mx-auto">
             <p>
               <strong>ReserBot</strong> is a conversational AI assistant built to help
               restaurants handle reservations, customer questions, menu info, and reviews — all through a smart,

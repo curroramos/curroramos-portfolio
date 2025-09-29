@@ -41,10 +41,10 @@ const WorkExperience = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="c-space my-40" id="work">
+    <section ref={sectionRef} className="c-space my-40" id="experience">
       <div className="w-full text-white-600">
       <div className="mb-16 text-center">
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">My Work Experience</h2>
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Work Experience</h2>
           {/* <p className="text-gray-400 max-w-2xl mx-auto">
             Here are some of my professional projects showcasing my experience in AI, 
             machine learning, computer vision, and autonomous systems.
