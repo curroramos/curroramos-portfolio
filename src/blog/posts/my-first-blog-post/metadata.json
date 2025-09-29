@@ -8,5 +8,6 @@
   "tags": ["personal", "introduction", "blog"],
   "featured": true,
   "published": true,
+  "public": false,
   "coverImage": "/assets/blog/first-post-cover.jpg"
 }

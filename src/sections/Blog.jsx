@@ -28,11 +28,18 @@ const BlogCard = ({ post, index }) => {
           )}
 
           <div className="p-6">
-            {post.featured && (
-              <div className="mb-3">
-                <span className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
-                  Featured
-                </span>
+            {(post.featured || post.public === false) && (
+              <div className="mb-3 flex gap-2">
+                {post.featured && (
+                  <span className="bg-blue-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                    Featured
+                  </span>
+                )}
+                {post.public === false && (
+                  <span className="bg-orange-600 text-white text-xs font-semibold px-2 py-1 rounded-full">
+                    Private
+                  </span>
+                )}
               </div>
             )}
 
@@ -111,7 +118,7 @@ const Blog = () => {
   }
 
   return (
-    <section className="c-space my-20" id="blog">
+    <section className="c-space pt-32 pb-20" id="blog">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-16 text-center">

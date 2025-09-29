@@ -8,5 +8,6 @@
   "tags": ["AI", "production", "engineering", "lessons-learned"],
   "featured": false,
   "published": true,
+  "public": true,
   "coverImage": "/assets/blog/ai-systems-cover.jpg"
 }

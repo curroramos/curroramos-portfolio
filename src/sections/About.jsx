@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import Globe from 'react-globe.gl';
 import Button from '../components/Button.jsx';
 import { motion } from 'framer-motion';
-import Tilt from 'react-tilt';
 
 // Tech stack data with logos
 const techStack = [
@@ -192,25 +191,30 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <Tilt
-            className="grid-container group hover:shadow-xl transition-all duration-300"
-            options={{
-              max: 25,
-              scale: 1.05,
-              speed: 1000,
-              glare: true,
-              "max-glare": 0.2,
-              gyroscope: true,
-              perspective: 1000,
-              transition: true
-            }}
-          >
-            <div className="w-full sm:h-[200px] h-fit overflow-hidden rounded-t-3xl relative">
+          <div className="grid-container group hover:shadow-xl transition-all duration-300">
+            <div
+              className="w-full sm:h-[200px] h-fit overflow-hidden rounded-t-3xl relative cursor-pointer"
+              onMouseMove={(e) => {
+                const rect = e.currentTarget.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width - 0.5) * 20;
+                const y = ((e.clientY - rect.top) / rect.height - 0.5) * 20;
+                const img = e.currentTarget.querySelector('img');
+                if (img) {
+                  img.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
+                }
+              }}
+              onMouseLeave={(e) => {
+                const img = e.currentTarget.querySelector('img');
+                if (img) {
+                  img.style.transform = 'translate(0px, 0px) scale(1)';
+                }
+              }}
+            >
               <div className="w-full h-full relative overflow-hidden">
                 <img
                   src="assets/tech/aigrid.png"
                   alt="AI Grid - What Drives Me"
-                  className="w-full h-full object-cover opacity-90 transition-all duration-500 group-hover:opacity-100"
+                  className="w-full h-full object-cover opacity-90 transition-all duration-300 ease-out group-hover:opacity-100"
                 />
                 {/* Animated overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 group-hover:from-blue-400/30 group-hover:via-purple-400/30 group-hover:to-pink-400/30 transition-all duration-500"></div>
@@ -229,13 +233,13 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-b-3xl">
-              <p className="grid-headtext bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">What Drives Me</p>
+            <div className="p-6">
+              <p className="grid-headtext">What Drives Me</p>
               <p className="grid-subtext">
                 Code is my craft, impact is my goal. Three years deep in AI and software engineering, I believe the best solutions are both elegant and practical.
               </p>
             </div>
-          </Tilt>
+          </div>
         </motion.div>
 
         {/* University Logos + Contact */}

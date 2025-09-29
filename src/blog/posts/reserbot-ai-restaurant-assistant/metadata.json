@@ -8,5 +8,6 @@
   "tags": ["AI", "LangChain", "Next.js", "restaurant-tech", "chatbot", "automation"],
   "featured": true,
   "published": true,
+  "public": true,
   "coverImage": "/assets/blog/reserbot-cover.jpg"
 }

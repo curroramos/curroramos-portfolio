@@ -42,7 +42,7 @@ const BlogPost = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black-100 pt-20">
+      <div className="min-h-screen bg-black-100 pt-32">
         <div className="max-w-4xl mx-auto px-6">
           <div className="animate-pulse">
             <div className="h-8 bg-gray-700 rounded w-3/4 mb-4"></div>
@@ -63,9 +63,9 @@ const BlogPost = () => {
   }
 
   return (
-    <div className="min-h-screen bg-black-100">
+    <div className="min-h-screen bg-black-100 pt-24">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-black-100/90 backdrop-blur-sm border-b border-black-300">
+      <nav className="fixed top-16 left-0 right-0 z-50 bg-black-100/90 backdrop-blur-sm border-b border-black-300">
         <div className="max-w-4xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link

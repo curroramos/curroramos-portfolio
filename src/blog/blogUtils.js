@@ -21,35 +21,61 @@ const importContent = async (postId) => {
   }
 };
 
-// Get all published blog posts
+// Check if debug mode is enabled via URL parameter
+const isDebugMode = () => {
+  if (typeof window === 'undefined') return false;
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('debug') === 'true';
+};
+
+// Get all published blog posts (with debug mode support)
 export const getAllPosts = async () => {
   try {
     const allMetadata = await importMetadata();
-    const publishedPosts = allMetadata
-      .filter(post => post.published)
+    const debugMode = isDebugMode();
+
+    const filteredPosts = allMetadata
+      .filter(post => {
+        if (!post.published) return false;
+        if (debugMode) return true; // Show all posts in debug mode
+        return post.public !== false; // Show only public posts (default to public if not specified)
+      })
       .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    return publishedPosts;
+    return filteredPosts;
   } catch (error) {
     console.error('Failed to load blog posts:', error);
     return [];
   }
 };
 
-// Get a specific blog post by ID
+// Get a specific blog post by ID (handles private posts in debug mode)
 export const getPostById = async (postId) => {
   try {
-    const allPosts = await getAllPosts();
-    const post = allPosts.find(p => p.id === postId);
+    const allMetadata = await importMetadata();
+    const debugMode = isDebugMode();
 
-    if (!post) {
+    // Find the post in metadata first
+    const postMetadata = allMetadata.find(p => p.id === postId);
+
+    if (!postMetadata) {
+      return null;
+    }
+
+    // Check if post should be accessible
+    if (!postMetadata.published) {
+      return null;
+    }
+
+    // In debug mode, show all posts. Otherwise, only show public posts
+    if (!debugMode && postMetadata.public === false) {
       return null;
     }
 
     const content = await importContent(postId);
 
     return {
-      ...post,
+      ...postMetadata,
       content
     };
   } catch (error) {
