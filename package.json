@@ -31,6 +31,7 @@
     "react-markdown": "^10.1.0",
     "react-responsive": "^10.0.0",
     "react-router-dom": "^7.9.3",
+    "react-tilt": "^1.0.2",
     "rehype-highlight": "^7.0.2",
     "remark-gfm": "^4.0.1",
     "three": "^0.167.1",

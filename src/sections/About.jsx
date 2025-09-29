@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import Globe from 'react-globe.gl';
 import Button from '../components/Button.jsx';
 import { motion } from 'framer-motion';
+import Tilt from 'react-tilt';
 
 // Tech stack data with logos
 const techStack = [
@@ -191,47 +192,50 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <div className="grid-container group hover:shadow-lg transition-all duration-300">
+          <Tilt
+            className="grid-container group hover:shadow-xl transition-all duration-300"
+            options={{
+              max: 25,
+              scale: 1.05,
+              speed: 1000,
+              glare: true,
+              "max-glare": 0.2,
+              gyroscope: true,
+              perspective: 1000,
+              transition: true
+            }}
+          >
             <div className="w-full sm:h-[200px] h-fit overflow-hidden rounded-t-3xl relative">
-              <motion.img
-                src="assets/tech/aigrid.png"
-                alt="grid-3"
-                className="w-full h-full object-cover opacity-80"
-                whileHover={{
-                  scale: 1.1,
-                  rotate: [0, -1, 1, 0],
-                  x: [0, -10, 10, 0],
-                  y: [0, -5, 5, 0]
-                }}
-                transition={{
-                  duration: 0.6,
-                  ease: "easeInOut",
-                  rotate: { repeat: Infinity, duration: 2 },
-                  x: { repeat: Infinity, duration: 3 },
-                  y: { repeat: Infinity, duration: 2.5 }
-                }}
-              />
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30"
-                whileHover={{
-                  background: [
-                    "linear-gradient(to right, rgb(30 58 138 / 0.3), rgb(88 28 135 / 0.3))",
-                    "linear-gradient(45deg, rgb(30 58 138 / 0.4), rgb(88 28 135 / 0.4))",
-                    "linear-gradient(90deg, rgb(30 58 138 / 0.3), rgb(88 28 135 / 0.3))",
-                    "linear-gradient(135deg, rgb(30 58 138 / 0.4), rgb(88 28 135 / 0.4))",
-                    "linear-gradient(to right, rgb(30 58 138 / 0.3), rgb(88 28 135 / 0.3))"
-                  ]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              ></motion.div>
+              <div className="w-full h-full relative overflow-hidden">
+                <img
+                  src="assets/tech/aigrid.png"
+                  alt="AI Grid - What Drives Me"
+                  className="w-full h-full object-cover opacity-90 transition-all duration-500 group-hover:opacity-100"
+                />
+                {/* Animated overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 group-hover:from-blue-400/30 group-hover:via-purple-400/30 group-hover:to-pink-400/30 transition-all duration-500"></div>
+
+                {/* Floating particles effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div className="absolute top-4 left-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                  <div className="absolute top-8 right-8 w-1 h-1 bg-purple-400 rounded-full animate-ping"></div>
+                  <div className="absolute bottom-6 left-8 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce"></div>
+                  <div className="absolute bottom-4 right-4 w-1 h-1 bg-cyan-400 rounded-full animate-pulse"></div>
+                </div>
+
+                {/* Shimmer effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 group-hover:animate-shimmer"></div>
+                </div>
+              </div>
             </div>
-            <div className="p-6">
-              <p className="grid-headtext">What Drives Me</p>
+            <div className="p-6 bg-gradient-to-br from-gray-900 to-gray-800 rounded-b-3xl">
+              <p className="grid-headtext bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">What Drives Me</p>
               <p className="grid-subtext">
                 Code is my craft, impact is my goal. Three years deep in AI and software engineering, I believe the best solutions are both elegant and practical.
               </p>
             </div>
-          </div>
+          </Tilt>
         </motion.div>
 
         {/* University Logos + Contact */}
