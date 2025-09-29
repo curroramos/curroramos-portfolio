@@ -134,30 +134,33 @@ const BlogPreview = () => {
         </div>
 
         {/* Featured Posts Grid */}
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6 mb-8">
+        <div className="flex flex-wrap justify-center gap-6 mb-20">
           {featuredPosts.map((post, index) => (
-            <BlogPreviewCard key={post.id} post={post} index={index} />
+            <div key={post.id} className="w-full max-w-sm h-[380px] sm:w-auto">
+              <BlogPreviewCard post={post} index={index} />
+            </div>
           ))}
         </div>
 
         {/* View All Posts Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 hover:scale-105"
+        <div className="text-center mt-16 pt-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            viewport={{ once: true }}
           >
-            <span>View All Posts</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </motion.div>
+            <Link
+              to="/blog"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md transition-all duration-200 hover:scale-105"
+            >
+              <span>View All Posts</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
