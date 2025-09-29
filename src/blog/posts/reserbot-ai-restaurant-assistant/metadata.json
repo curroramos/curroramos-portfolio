@@ -1,0 +1,12 @@
+{
+  "id": "reserbot-ai-restaurant-assistant",
+  "title": "ReserBot 🍳: Building an AI-Powered Restaurant Assistant",
+  "description": "An AI-powered restaurant assistant built with Next.js that helps manage table reservations, customer inquiries, menu questions, and reviews. Learn how ReserBot transforms restaurant customer service through intelligent automation.",
+  "author": "Francisco Ramos",
+  "date": "2024-12-30",
+  "readTime": "10 min read",
+  "tags": ["AI", "LangChain", "Next.js", "restaurant-tech", "chatbot", "automation"],
+  "featured": true,
+  "published": true,
+  "coverImage": "/assets/blog/reserbot-cover.jpg"
+}

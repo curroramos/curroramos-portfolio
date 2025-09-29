@@ -1,0 +1,12 @@
+{
+  "id": "my-first-blog-post",
+  "title": "My First Blog Post",
+  "description": "Welcome to my blog! This is my very first post where I'll be sharing my thoughts on software engineering, AI, and my journey as a developer.",
+  "author": "Francisco Ramos",
+  "date": "2024-12-28",
+  "readTime": "3 min read",
+  "tags": ["personal", "introduction", "blog"],
+  "featured": true,
+  "published": true,
+  "coverImage": "/assets/blog/first-post-cover.jpg"
+}

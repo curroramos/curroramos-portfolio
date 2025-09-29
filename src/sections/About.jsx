@@ -5,18 +5,16 @@ import { motion } from 'framer-motion';
 
 // Tech stack data with logos
 const techStack = [
-  { name: "Java Spring", logo: "assets/tech/java-spring.png" },
-  { name: "Python", logo: "assets/tech/python.png" },
-  { name: "React", logo: "assets/tech/react.png" },
-  { name: "Next.js", logo: "assets/tech/nextjs.png" },
-  { name: "Angular", logo: "assets/tech/angular.png" },
-  { name: "TypeScript", logo: "assets/tech/typescript.png" },
-  { name: "Azure", logo: "assets/tech/azure.png" },
-  { name: "SQL", logo: "assets/tech/sql.png" },
-  { name: "PostgreSQL", logo: "assets/tech/postgresql.png" },
-  { name: "MongoDB", logo: "assets/tech/mongodb.png" },
+  { name: "Python", logo: "assets/tech/icons/python.svg" },
+  { name: "FastAPI", logo: "assets/tech/icons/fastapi.svg" },
+  { name: "React", logo: "assets/tech/icons/react.svg" },
+  { name: "Next.js", logo: "assets/tech/icons/nextjs.svg" },
+  { name: "Java", logo: "assets/tech/icons/java.svg" },
+  { name: "SpringBoot", logo: "assets/tech/icons/springboot.svg" },
+  { name: "Redis", logo: "assets/tech/icons/redis.svg" },
+  { name: "Celery", logo: "assets/tech/icons/celery.png" },
   { name: "Docker", logo: "assets/tech/docker.png" },
-  { name: "LLM/RAG", logo: "assets/tech/ai.png" },
+  { name: "PostgreSQL", logo: "assets/tech/postgresql.png" },
 ];
 
 const About = () => {
@@ -92,7 +90,7 @@ const About = () => {
             <div className="p-6">
               <p className="grid-headtext">Hi, I'm Francisco Ramos</p>
               <p className="grid-subtext">
-                I'm a software engineer and UC Berkeley grad with hands-on experience building agentic AI systems. I recently led development of chatbots and AI dashboards for market intelligence and compliance use cases.
+                Software engineer and UC Berkeley grad passionate about building intelligent systems. Currently working on AI-powered applications that solve real-world business problems.
               </p>
             </div>
           </div>
@@ -128,7 +126,7 @@ const About = () => {
             <div className="p-6">
               <p className="grid-headtext">Global Perspective</p>
               <p className="grid-subtext">
-                Originally from Spain, I've lived and worked in California and Texas, bringing diverse perspectives to problem-solving.
+                Born in Madrid, raised globally. From Spain to California to Texas—each place shaped my approach to technology and collaboration.
               </p>
             </div>
           </div>
@@ -146,7 +144,7 @@ const About = () => {
             <div
               className={`rounded-t-3xl w-full ${
                 showMore ? 'sm:h-auto h-auto' : 'sm:h-[326px] h-fit'
-              } flex justify-center items-center overflow-hidden bg-gradient-to-br from-blue-800 to-indigo-900 p-5 transition-all duration-300`}
+              } flex justify-center items-center overflow-hidden bg-gradient-to-b from-gray-800 to-gray-900 p-5 transition-all duration-300`}
             >
               <div className="grid grid-cols-3 gap-3">
                 {techStack.slice(0, visibleTech).map((tech, index) => (
@@ -178,7 +176,7 @@ const About = () => {
                   </button>
                 </div>
                 <p className="grid-subtext mt-2">
-                  I work across the stack with a focus on LLMs, RAG pipelines, and production-grade AI systems.
+                  Full-stack engineer focused on scalable AI systems and robust backend architectures.
                 </p>
               </div>
             </div>
@@ -186,7 +184,7 @@ const About = () => {
 
 
         {/* Passion */}
-        <motion.div 
+        <motion.div
           className="xl:col-span-2"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -195,17 +193,42 @@ const About = () => {
         >
           <div className="grid-container group hover:shadow-lg transition-all duration-300">
             <div className="w-full sm:h-[200px] h-fit overflow-hidden rounded-t-3xl relative">
-              <img 
-                src="assets/tech/aigrid.png" 
-                alt="grid-3" 
-                className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-all duration-500" 
+              <motion.img
+                src="assets/tech/aigrid.png"
+                alt="grid-3"
+                className="w-full h-full object-cover opacity-80"
+                whileHover={{
+                  scale: 1.1,
+                  rotate: [0, -1, 1, 0],
+                  x: [0, -10, 10, 0],
+                  y: [0, -5, 5, 0]
+                }}
+                transition={{
+                  duration: 0.6,
+                  ease: "easeInOut",
+                  rotate: { repeat: Infinity, duration: 2 },
+                  x: { repeat: Infinity, duration: 3 },
+                  y: { repeat: Infinity, duration: 2.5 }
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30"></div>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-900/30 to-purple-900/30"
+                whileHover={{
+                  background: [
+                    "linear-gradient(to right, rgb(30 58 138 / 0.3), rgb(88 28 135 / 0.3))",
+                    "linear-gradient(45deg, rgb(30 58 138 / 0.4), rgb(88 28 135 / 0.4))",
+                    "linear-gradient(90deg, rgb(30 58 138 / 0.3), rgb(88 28 135 / 0.3))",
+                    "linear-gradient(135deg, rgb(30 58 138 / 0.4), rgb(88 28 135 / 0.4))",
+                    "linear-gradient(to right, rgb(30 58 138 / 0.3), rgb(88 28 135 / 0.3))"
+                  ]
+                }}
+                transition={{ duration: 2, repeat: Infinity }}
+              ></motion.div>
             </div>
             <div className="p-6">
               <p className="grid-headtext">What Drives Me</p>
               <p className="grid-subtext">
-                I love solving real-world problems through code. With 1 year of full-time and 2 years of part-time experience in AI and software, I bring a strong production mindset with an eye toward scale and clarity.
+                Code is my craft, impact is my goal. Three years deep in AI and software engineering, I believe the best solutions are both elegant and practical.
               </p>
             </div>
           </div>

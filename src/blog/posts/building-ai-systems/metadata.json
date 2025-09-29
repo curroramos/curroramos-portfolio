@@ -1,0 +1,12 @@
+{
+  "id": "building-ai-systems",
+  "title": "Building Production-Ready AI Systems: Lessons Learned",
+  "description": "After working on several AI projects, I've learned valuable lessons about building AI systems that actually work in production. Here are the key challenges and solutions.",
+  "author": "Francisco Ramos",
+  "date": "2024-12-20",
+  "readTime": "7 min read",
+  "tags": ["AI", "production", "engineering", "lessons-learned"],
+  "featured": false,
+  "published": true,
+  "coverImage": "/assets/blog/ai-systems-cover.jpg"
+}

@@ -11,28 +11,29 @@ export const navLinks = [
   },
   {
     id: 3,
-    name: 'Latest Work',
-    href: '#work',
-  },
-  {
-    id: 4,
     name: 'Projects',
     href: '#projects',
   },
   {
-    id: 5,
+    id: 4,
     name: 'Experience',
     href: '#experience',
   },
   {
-    id: 6,
+    id: 5,
     name: 'Media',
     href: '#media',
   },
   {
-    id: 7,
+    id: 6,
     name: 'Contact',
     href: '#contact',
+  },
+  {
+    id: 7,
+    name: 'Blog',
+    href: '/blog',
+    isButton: true,
   },
 ];
 

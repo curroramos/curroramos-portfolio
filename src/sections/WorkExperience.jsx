@@ -41,7 +41,7 @@ const WorkExperience = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="c-space my-40" id="experience">
+    <section ref={sectionRef} className="c-space my-20" id="experience">
       <div className="w-full text-white-600">
       <div className="mb-16 text-center">
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Work Experience</h2>
