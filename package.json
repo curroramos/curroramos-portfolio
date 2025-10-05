@@ -33,6 +33,7 @@
     "react-responsive": "^10.0.0",
     "react-router-dom": "^7.9.3",
     "rehype-highlight": "^7.0.2",
+    "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
     "three": "^0.167.1",
     "three-stdlib": "^2.35.15"

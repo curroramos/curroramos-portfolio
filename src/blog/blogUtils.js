@@ -38,7 +38,7 @@ export const getAllPosts = async () => {
       .filter(post => {
         if (!post.published) return false;
         if (debugMode) return true; // Show all posts in debug mode
-        return post.public !== false; // Show only public posts (default to public if not specified)
+        return post.public === true; // Only show posts explicitly marked as public
       })
       .sort((a, b) => new Date(b.date) - new Date(a.date));
 
@@ -67,8 +67,8 @@ export const getPostById = async (postId) => {
       return null;
     }
 
-    // In debug mode, show all posts. Otherwise, only show public posts
-    if (!debugMode && postMetadata.public === false) {
+    // In debug mode, show all posts. Otherwise, only show explicitly public posts
+    if (!debugMode && postMetadata.public !== true) {
       return null;
     }
 

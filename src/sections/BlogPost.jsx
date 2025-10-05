@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
+import rehypeRaw from 'rehype-raw';
 import { getPostById, formatDate } from '../blog/blogUtils.js';
 
 // Import highlight.js CSS for code syntax highlighting
@@ -160,7 +161,7 @@ const BlogPost = () => {
           <div className="prose prose-invert prose-lg max-w-none">
             <ReactMarkdown
               remarkPlugins={[remarkGfm]}
-              rehypePlugins={[rehypeHighlight]}
+              rehypePlugins={[rehypeRaw, rehypeHighlight]}
               components={{
                 // Custom styling for markdown elements
                 h1: ({children}) => (
@@ -215,6 +216,17 @@ const BlogPost = () => {
                   >
                     {children}
                   </a>
+                ),
+                iframe: ({src, ...props}) => (
+                  <div className="my-6 aspect-video">
+                    <iframe
+                      src={src}
+                      className="w-full h-full rounded-lg"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      {...props}
+                    />
+                  </div>
                 ),
               }}
             >
